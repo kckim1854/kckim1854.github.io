@@ -1,0 +1,202 @@
+{% extends "base.html" %}
+{% block head_add %}
+<style>
+    /* 이미지들을 감싸는 div에 Flexbox 설정 */
+    #Tenacity .image-container {
+      display: flex;
+      flex-wrap: wrap; /* 요소들이 여러 행에 걸쳐 나타나도록 설정 */
+      gap: 10px; /* 이미지 간격 설정 */
+    }
+
+    /* 각 figure 요소의 스타일 설정 */
+    #Tenacity .image-container figure {
+      flex: 0 0 calc(33.33% - 10px); /* Flex 아이템의 크기를 조정 (여기서는 폭 200px로 설정) */
+      margin: 0; /* 기본 margin 제거 */
+      text-align: center;
+    }
+
+    /* 이미지의 크기 조정 */
+    #Tenacity .image-container figure img {
+      width: 100%; /* 이미지의 너비를 부모 요소에 맞추어 설정 */
+      height: auto; /* 비율 유지를 위해 높이 자동으로 설정 */
+      display: block; /* 인라인 요소의 성질을 제거하여 정확한 크기 적용 */
+      max-width:100%
+    }
+
+
+    /* 캡션 스타일 */
+    .image-caption {
+      font-style: italic; /* 기울임꼴 폰트 스타일 */
+      font-size: 14px;
+      color: #333; /* 텍스트 색상 설정 */
+    }
+</style>
+
+{% endblock %}
+
+{% block content %}
+<div style="border: 1px solid black; background-color: lightblue;">
+    <h1>바닥재 ( Flooring Material )</h1>
+    <ul>
+            <li><a href="#wood">원목마루</a></li>
+            <li><a href="#LVT">LVT</a></li>
+            <li><a href="#SPC">SPC</a></li>
+            <li><a href="#Atroguard">아트로가드</a></li>
+            <li><a href="#Tenacity">테나시티</a></li>
+            <li><a href="#other">기타</a></li>
+    </ul>
+    <hr>
+</div>
+
+<div id="wood">
+    <h2>원목마루 (Wood)</h2>
+    <div class="image-container">
+        <img src="/static/img/product/Floor/Atroguard/KakaoTalk_20230908_133548798.png">
+    </div>
+</div>
+
+<div id="LVT">
+    <h2>LVT</h2>
+    <div class="image-container">
+        <img src="/static/img/product/Floor/Atroguard/KakaoTalk_20230908_133548798.png">
+    </div>
+
+</div>
+
+<div id="SPC">
+    <h2>SPC</h2>
+    <div class="image-container">
+        <img src="/static/img/product/Floor/Atroguard/KakaoTalk_20230908_133548798.png">
+    </div>
+
+</div>
+
+<div id="Atroguard">
+    <h2>아트로가드 (Atroguard)</h2>
+    <div class="image-container">
+        <img src="/static/img/product/Floor/Atroguard/KakaoTalk_20230908_133548798_13.png">
+
+        <img src="/static/img/product/Floor/Atroguard/KakaoTalk_20230908_133548798_04.png">
+
+        <img src="/static/img/product/Floor/Atroguard/KakaoTalk_20230908_133548798.png">
+        <img src="/static/img/product/Floor/Atroguard/KakaoTalk_20230908_133548798_02.png">
+
+        <img src="/static/img/product/Floor/Atroguard/KakaoTalk_20230908_133548798_03.png">
+
+        <img src="/static/img/product/Floor/Atroguard/KakaoTalk_20230908_133548798_01.png">
+
+        <img src="/static/img/product/Floor/Atroguard/KakaoTalk_20230908_133548798_05.png">
+        <img src="/static/img/product/Floor/Atroguard/KakaoTalk_20230908_133548798_06.png">
+        <img src="/static/img/product/Floor/Atroguard/KakaoTalk_20230908_133548798_07.png">
+        <img src="/static/img/product/Floor/Atroguard/KakaoTalk_20230908_133548798_08.png">
+        <img src="/static/img/product/Floor/Atroguard/KakaoTalk_20230908_133548798_09.png">
+
+        <img src="/static/img/product/Floor/Atroguard/KakaoTalk_20230908_133548798_10.png">
+        <img src="/static/img/product/Floor/Atroguard/KakaoTalk_20230908_133548798_11.png">
+        <img src="/static/img/product/Floor/Atroguard/KakaoTalk_20230908_133548798_12.png">
+        <img src="/static/img/product/Floor/Atroguard/KakaoTalk_20230908_133548798_14.png">
+    </div>
+</div>
+
+<div id="Tenacity">
+    <h2>Tenacity</h2>
+    <div class="image-container">
+       <figure>
+          <img src="/static/img/product/Floor/Tenacity/1.2M CAPITAL REEF (1).png" target="_self" >
+          <figcaption class="image-caption">Capital Reef</figcaption>
+       </figure>
+       <figure>
+          <img src="/static/img/product/Floor/Tenacity/1SUMMER  BREEZE.png" target="_self" >
+          <figcaption class="image-caption">Summer Breeze</figcaption>
+       </figure>
+       <figure>
+          <img src="/static/img/product/Floor/Tenacity/AMERICAN OAK.png" target="_self" >
+          <figcaption class="image-caption">American Oak</figcaption>
+       </figure>
+       <figure>
+          <img src="/static/img/product/Floor/Tenacity/BEDROCK.png" target="_self" >
+          <figcaption class="image-caption">Bedrock</figcaption>
+       </figure>
+       <figure>
+          <img src="/static/img/product/Floor/Tenacity/CONCRETE.png" target="_self" >
+          <figcaption class="image-caption">Concrete</figcaption>
+       </figure>
+       <figure>
+          <img src="/static/img/product/Floor/Tenacity/DAVAO.png" target="_self" >
+          <figcaption class="image-caption">Davao</figcaption>
+       </figure>
+       <figure>
+          <img src="/static/img/product/Floor/Tenacity/DENALI.png" target="_self" >
+          <figcaption class="image-caption">Denali</figcaption>
+       </figure>
+       <figure>
+          <img src="/static/img/product/Floor/Tenacity/HARVARD.png" target="_self" >
+          <figcaption class="image-caption">Harvard</figcaption>
+       </figure>
+       <figure>
+          <img src="/static/img/product/Floor/Tenacity/HICKORY.png" target="_self" >
+          <figcaption class="image-caption">Hickory</figcaption>
+       </figure>
+       <figure>
+          <img src="/static/img/product/Floor/Tenacity/MARBLE.png" target="_self" >
+          <figcaption class="image-caption">Marble</figcaption>
+       </figure>
+       <figure>
+          <img src="/static/img/product/Floor/Tenacity/MIXED WIDTHS.png" target="_self" >
+          <figcaption class="image-caption">Mixed Width</figcaption>
+       </figure>
+       <figure>
+          <img src="/static/img/product/Floor/Tenacity/OAK.png" target="_self" >
+          <figcaption class="image-caption">Oak</figcaption>
+       </figure>
+       <figure>
+          <img src="/static/img/product/Floor/Tenacity/PATAGONIA.png" target="_self" >
+          <figcaption class="image-caption">Patagonia</figcaption>
+       </figure>
+       <figure>
+          <img src="/static/img/product/Floor/Tenacity/PIKES PEAK.png" target="_self" >
+          <figcaption class="image-caption">Pikes Peak</figcaption>
+       </figure>
+       <figure>
+          <img src="/static/img/product/Floor/Tenacity/RUSTIC OAK.png" target="_self" >
+          <figcaption class="image-caption">Rustic Oak</figcaption>
+       </figure>
+       <figure>
+          <img src="/static/img/product/Floor/Tenacity/SANTA CRUZ.png" target="_self" >
+          <figcaption class="image-caption">Santa Cruz</figcaption>
+       </figure>
+       <figure>
+          <img src="/static/img/product/Floor/Tenacity/SUMMER  BREEZE.png" target="_self" >
+          <figcaption class="image-caption">Summer Breeze</figcaption>
+       </figure>
+       <figure>
+          <img src="/static/img/product/Floor/Tenacity/ULTRA OAK.png" target="_self" >
+          <figcaption class="image-caption">Ultra Oak</figcaption>
+       </figure>
+       <figure>
+          <img src="/static/img/product/Floor/Tenacity/VERMONT.png" target="_self" >
+          <figcaption class="image-caption">Vermont</figcaption>
+       </figure>
+       <figure>
+          <img src="/static/img/product/Floor/Tenacity/WASHED LOOKS.png" target="_self" >
+          <figcaption class="image-caption">Washed Looks</figcaption>
+       </figure>
+
+    </div>
+    <a href="/static/img/product/Floor/Tenacity/tenacity.pdf"><h6 style="color:greeny m">Look at More Samples</h6></a>
+
+</div>
+
+<div id="other">
+    <h2>기타</h2>
+    <div class="image-container">
+        <img src="/static/img/product/Floor/Atroguard/KakaoTalk_20230908_133548798.png">
+    </div>
+
+    <video width="320" height="240" controls>
+        <source src="/static/img/product/Floor/Atroguard/KakaoTalk_20230915_123952487.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+</div>
+{% endblock %}

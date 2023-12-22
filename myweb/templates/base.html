@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:color="http://www.w3.org/1999/xhtml" xmlns:font-size="http://www.w3.org/1999/xhtml">
+<head>
+    {% block title %}
+      <title>Kim's Home Page</title>
+    {% endblock %}
+
+    {% block head_add %}
+    {% endblock %}
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!-- Add additional CSS in static file -->
+    {% load static %}
+   <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+
+<style>
+
+    .smenu {
+        display: flex; /* Flexbox 레이아웃 사용 */
+        justify-content: space-between; /* 로고와 메뉴를 양 끝으로 정렬 */
+        align-items: center; /* 세로 중앙 정렬 */
+        background-color: powderblue;
+        padding: 10px;
+        margin: 0;
+        margin-right: 0;
+
+
+    }
+
+    .logo {
+        font-size: 40px;
+        text-align: left;
+        color: violet;
+        background-color: lightgreen;
+        border : 3px solid green;
+        border-radius : 7px
+
+        /* margin-right: auto; 로고를 왼쪽 끝에 정렬 */
+    }
+
+    .menu ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex; /* 메뉴 항목들을 가로로 나열하기 위해 Flexbox 사용 */
+        /* border: 1px solid black; */
+    }
+
+    .menu ul li {
+        margin-right: 20px;
+        position: relative;
+        /* border: 1px solid black; */
+    }
+
+    .menu ul li:last-child {
+        margin-right: 20px; /* 마지막 메뉴 항목의 오른쪽 마진을 제거하여 간격 조정 */
+    }
+
+    .menu ul li:hover ul.submenu {
+        display: block; /* 마우스 호버 시 하위 메뉴 표시 */
+        background-color: #dddddd;
+    }
+
+    .menu ul li ul.submenu {
+        display: none;
+        position: absolute;
+        width: 80px;
+        top: 100%; /* 상위 메뉴 아래에 표시 */
+        left:0;
+        background-color: #fff;
+        padding: 0;
+        z-index: 999; /* 서브메뉴가 표시될 때 아래에 있는 요소 위에 나타나게 함 */
+    }
+
+    .has-submenu::after {
+        content: '\25B8'; /* 오른쪽 방향 화살표 아이콘 */
+        display: inline-block;
+        margin-left: 5px; /* 화살표와 텍스트 사이 여백 조정 */
+        transition: transform 0.3s; /* 화살표 회전 효과를 위한 트랜지션 */
+    }
+
+    /* 서브메뉴가 열렸을 때 화살표 회전 */
+    .has-submenu.active::after {
+        transform: rotate(90deg); /* 화살표 회전 */
+    }
+    /* 서브메뉴 스타일 */
+    .submenu {
+        display: none;
+        list-style: none;
+        padding: 0;
+    }
+
+    .has-submenu.active .submenu {
+        display: block;
+    }
+
+    .audio-player {
+        position: fixed;
+        bottom: 20px; /* 하단 여백 조정 */
+        right: 20px; /* 오른쪽 여백 조정 */
+/*        background-color: #f0f0f0; */
+/*        background-color: rgba(240, 240, 240, 0.5); *//* 반투명한 배경색을 지정합니다 (RGBA 색상값 사용) */
+        padding: 0;
+        border-radius: 0;
+/*        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); *//* 그림자 효과 추가 */
+    }
+
+    /* .audio-player 내부의 내용에 대한 스타일 */
+    .audio-player * {
+        opacity: 0.3; /* 내용물의 투명도 설정 */
+    }
+
+    <style>
+/* CSS 스타일 시트 */
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* 이미지 사이의 간격 조정 */
+}
+
+.image-container img {
+  max-width: calc(33.33% - 20px); /* 각 이미지의 최대 너비 지정 */
+  height: auto;
+  margin: 5px; /* 이미지 주위의 여백 조정 */
+}
+
+.image-container .text-overlay {
+      position: absolute;
+      top: 50%; /* 이미지 중앙에 배치하려면 수직 위치 조정 */
+      left: 50%; /* 이미지 중앙에 배치하려면 수평 위치 조정 */
+      transform: translate(-50%, -50%);
+      background: rgba(255, 255, 255, 0.7); /* 텍스트 배경색과 투명도 설정 */
+      padding: 10px;
+    }
+
+
+    .main {
+        background-color: lightgrey;
+    }
+
+
+</style>
+
+</head>
+
+<body>
+<!--    <header>
+       <h1 style="text-align:left; color:green; background-color:powderblue; ">ScHAFFEN</h1>
+    </header>-->
+    <div class="smenu">
+        <div><a class="logo" href="{% url 'index' %}"><b><i>The ScHAFFEN</i></b></a></div>
+        <nav class="menu" style="background-color:powderblue;">
+            <ul>
+                <li><a class="nav-link" href="{% url 'index' %}">샤펜 홈</a></li>
+                <li><a class="nav-link" href="{% url 'intro' %}#about">샤펜 소개</a></li>
+                <li class="has-submenu"><a class="nav-link" href="{% url 'product' %}#services">샤펜 제품</a>
+                    <ul class="submenu">
+                        <li><a href="{% url 'floor' %}">바닥재</a></li>
+                        <li><a href="{% url 'wall' %}">벽재</a></li>
+                        <li><a href="{% url 'tile' %}">타일</a></li>
+                        <li><a href="{% url 'stone' %}">석재</a></li>
+                        <li><a href="{% url 'bath' %}">바스</a></li>
+                        <li><a href="{% url 'furniture' %}">가구</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu"><a class="nav-link" href="{% url 'project' %}#project">프로젝트</a>
+                    <ul class="submenu">
+                        <li><a href="https://www.instagram.com/safn_official">인스타그램</a></li>
+                        <li><a href="https://blog.naver.com/safn_official">블로그</a></li>
+                    </ul>
+                </li>
+                <li><a class="nav-link" href="{% url 'faq' %}#faq">FAQ</a></li>
+                <li><a class="nav-link" href="{% url 'contact' %}#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="main">
+        <br>
+            {% block content %}
+            {% endblock %}
+    </div>
+<!-- Audio -->
+<div class="audio-player">
+  <audio controls autoplay loop>
+    <source src="/static/audio/Alhambra.mp3" type="audio/mpeg ">
+    Your browser does not support the audio tag.
+  </audio>
+</div>
+
+<script>
+  window.onload = function() {
+    const audioState = localStorage.getItem('audioState');
+    const audioPlayer = document.querySelector('.audio-player audio');
+    if (audioPlayer && audioState) {
+      const parsedState = JSON.parse(audioState);
+      audioPlayer.currentTime = parsedState.currentTime;
+      // 필요한 다른 상태 정보를 복원
+      audioPlayer.volume = parsedState.volume;
+      if (parsedState.isPlaying) {
+        audioPlayer.play();
+      } else {
+        audioPlayer.pause();
+      }
+    }
+  };
+
+  window.onunload = function() {
+    const audioPlayer = document.querySelector('.audio-player audio');
+    if (audioPlayer) {
+      const audioState = {
+        currentTime: audioPlayer.currentTime,
+        // 필요한 다른 상태 정보 저장
+        volume: audioPlayer.volume,
+        isPlaying: !audioPlayer.paused
+      };
+      localStorage.setItem('audioState', JSON.stringify(audioState));
+    }
+  };
+</script>
+
+    <footer>
+        <div style="text-align:center; color:green; background-color:powderblue; ">
+            <br>
+            <H5>SHOWROOM</H5>
+            <h6>서울특별시 강남구 논현로 136길 5-7, B1~3F 샤펜(06531)</h6>
+            <h6>5-7 Nonhyun-Ro 136-Gil, B1~3F, GangNam-Gu, Seoul, Republic of Korea (06531)</h6>
+            <h6>e-mail : safn00114@gmail.com</h6>
+            <br>
+        </div>
+    </footer>
+
+</body>
+</html>
+

@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% block head_add %}
+<style>
+/* CSS 스타일 시트 */
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* 이미지 사이의 간격 조정 */
+}
+
+.image-container img {
+  max-width: calc(33.33% - 20px); /* 각 이미지의 최대 너비 지정 */
+  height: auto;
+  margin: 5px; /* 이미지 주위의 여백 조정 */
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<div style="border: 1px solid black; background-color: lightblue;">
+<h1>키친/바스 (  Kitchen / Bath )</h1>
+        <ul>
+            <li><a href="#tub">욕조</a></li>
+            <li><a href="#shower">샤워대</a></li>
+            <li><a href="#commode">변기</a></li>
+            <li><a href="#table">테이블</a></li>
+            <li><a href="#faucet">수전</a></li>
+            <li><a href="#other">기타</a></li>
+        </ul>
+</div>
+
+
+<div id="tub">
+    <h2>욕조 (Bath Tub)</h2>
+
+</div>
+
+<div id="shower">
+    <h2>샤워대 (Shower)</h2>
+
+</div>
+
+<div id="commode">
+    <h2>변기 (Commode)</h2>
+
+</div>
+
+<div id="table">
+    <h2>테이블 (Island Table)</h2>
+    <div class="image-container">
+        <img src="/static/img/product/BathKitchen/Table/3034760d43a839c7f52a151784197752.jpg">
+        <img src="/static/img/product/BathKitchen/Table/ELZCT63czRSFYzvLI4NOhbX7awo6cU9bvDi8ozJz.jpg">
+        <img src="/static/img/product/BathKitchen/Table/imageconvert.png">
+        <img src="/static/img/product/BathKitchen/Table/Nero-Cucine-1.jpg">
+        <img src="/static/img/product/BathKitchen/Table/Nero-Cucine-4.jpg">
+        <img src="/static/img/product/BathKitchen/Table/Nero-Cucine-5.jpg">
+        <img src="/static/img/product/BathKitchen/Table/Nero-Cucine-6_0.jpg">
+        <img src="/static/img/product/BathKitchen/Table/NeroCucine_NP4_Hyperkitchen_madeinItaly_Kitchen_Design-8-200x300.jpg">
+        <img src="/static/img/product/BathKitchen/Table/NeroCucine_NP4_Hyperkitchen_madeinItaly_Kitchen_Design-13-768x976.jpg">
+        <img src="/static/img/product/BathKitchen/Table/NeroCucine_NP4_Hyperkitchen_madeinItaly_Kitchen_Design-11-300x300.jpg">
+        <img src="/static/img/product/BathKitchen/Table/NeroCucine_NP4_Hyperkitchen_madeinItaly_Kitchen_Design-17.jpg">
+        <img src="/static/img/product/BathKitchen/Table/NP4_ArchitizerWinner1.jpg">
+        <img src="/static/img/product/BathKitchen/Table/t57njzfY5LNO8igOWmZOV6ujZTnGKVWeiUDsSUju.jpg">
+        <img src="/static/img/product/BathKitchen/Table/Pineta Polished Kitchen (5).jpg">
+
+
+
+
+
+    </div>
+
+</div>
+
+<div id="faucet">
+    <h2>수전 (Faucet)</h2>
+
+</div>
+
+<div id="other">
+    <h2>기타</h2>
+
+</div>
+
+{% endblock %}

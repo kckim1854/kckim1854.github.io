@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block head_add %}
+<style>
+/* CSS 스타일 시트 */
+
+</style>
+{% endblock %}
+
+{% block content %}
+<div style="border: 1px solid black; background-color: lightblue;">
+<h1>가구 ( Furniture )</h1>
+
+
+        <ul>
+            <li><a href="#sofa">소파</a></li>
+            <li><a href="#table">식탁</a></li>
+            <li><a href="#chair">의자</a></li>
+            <li><a href="#bed">침대</a></li>
+            <li><a href="#other">기타</a></li>
+        </ul>
+</div>
+
+
+<div id="sofa">
+    <h2>소파 (Sofa)</h2>
+
+
+</div>
+
+<div id="table">
+    <h2>식탁 (Dining Table)</h2>
+</div>
+
+
+<div id="chair">
+    <h2>의자 (Chair)</h2>
+</div>
+<div id="bed">
+    <h2>침대 (Bed)</h2>
+    <img src="/static/img/product/Floor/Atroguard/KakaoTalk_20230908_133548798.png">
+</div>
+<div id="other">
+    <h2>기타</h2>
+</div>
+
+{% endblock %}

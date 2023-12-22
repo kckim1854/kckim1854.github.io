@@ -1,0 +1,14 @@
+<style>
+/* CSS 스타일 시트 */
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* 이미지 사이의 간격 조정 */
+}
+
+.image-container img {
+  max-width: calc(33.33% - 20px); /* 각 이미지의 최대 너비 지정 */
+  height: auto;
+  margin: 5px; /* 이미지 주위의 여백 조정 */
+}
+</style>

@@ -1,0 +1,210 @@
+{% extends "base.html" %}
+{% block head_add %}
+<style>
+/* CSS 스타일 시트 */
+table {
+    width: 80%;
+    margin: 10%;
+    text-align : center;
+}
+
+table th {
+    width: 16%;
+}
+
+table th, table tr td {
+    border: 1px solid black;
+}
+td ul {
+    list-style-type: none;
+    padding-left: 0; /* ul 안의 내용을 좌측 정렬하기 위해 패딩 제거 */
+    margin-top: 0; /* ul 위쪽 여백 제거 */
+}
+
+</style>
+  <style>
+    /* 기본적인 스타일링 */
+    .w3-half {
+      width: 50%;
+      float: left;
+      text-align: center; /* 가운데 정렬을 위해 추가 */
+    }
+    .dropdown-container {
+        text-align: center;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 120px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+
+    table td a {
+      display: block;
+    }
+  </style>
+
+{% endblock %}
+
+{% block content %}
+<div>
+    <h1 style="color:green; text-align:center">인테리어 자재</h1>
+</div>
+<table>
+  <tr>
+    <th><a href="{% url 'floor' %}">바닥재</a></th>
+    <th><a href="{% url 'wall' %}">벽재</a></th>
+    <th><a href="{% url 'tile' %}">타일</a></th>
+    <th><a href="{% url 'stone' %}">석재</a></th>
+    <th><a href="{% url 'bath' %}">키친/바스</a></th>
+    <th><a href="{% url 'furniture' %}">가구</a></th>
+
+
+  </tr>
+  <tr>
+    <td>
+        <ul>
+            <li>원목마루</li>
+            <li>LVT</li>
+            <li>SPC</li>
+            <li>아트로가드</li>
+            <li>테나시티</li>
+        </ul>
+    </td>
+    <td>
+        <ul>
+            <li>콘크리아테</li>
+            <li>LM Panel</li>
+            <li>FMC</li>
+            <li>기타</li>
+        </ul>
+    </td>
+  <td>
+      <ul>
+
+    <li>빅 슬랩</li>
+    <li>포슬린</li>
+    <li>모자이크</li>
+    <li>기타</li>
+          </ul>
+  </td>
+  <td>
+      <ul>
+    <li>테라조</li>
+    <li>천연석</li>
+    <li>기타</li>
+          </ul>
+  </td>
+  <td>
+      <ul>
+    <li>욕조</li>
+    <li>샤워대</li>
+    <li>변기</li>
+    <li>테이블</li>
+    <li>수전</li>
+    <li>기타</li>
+          </ul>
+  </td>
+  <td>
+      <ul>
+    <li>소파</li>
+    <li>식탁</li>
+    <li>침대</li>
+    <li>의자</li>
+    <li>기타</li>
+          </ul>
+  </td>
+  </tr>
+</table>
+
+<div>
+    <hr><hr>
+</div>
+
+<div>
+    <h1 style="color:blue; text-align:center">인기상품/신상품/카탈로그</h1>
+</div>
+
+<table>
+  <tr>
+    <th style="padding:15px; color:blue; "><a href="#best">인기상품</a></th>
+    <th style="padding:15px; color:blue; "><a href="#new">신상품</a></th>
+    <th style="padding:15px; color:blue; "><a href="#catalog">카탈로그</a></th>
+</table>
+
+<div id="best">
+    <h2 style="color:blue; text-align:center">인기 상품 (Best Selling Products)</h2>
+    <img src="/static/img/product/Best/FMC Stone.png" alt="FMC Stone.png">
+    <img src="/static/img/product/Best/LM1.png" alt="LM1.png">
+    <img src="/static/img/product/Best/LM2.png" alt="LM2.png">
+</div>
+<div>
+    <hr><hr>
+</div>
+
+
+<div id="new">
+    <h2 style="color:blue; text-align:center">신 상품 (New Arrivals)</h2>
+    <img src="/static/img/product/New/애쉬파우더화이트.png" alt="애쉬파우더화이트.png">
+    <img src="/static/img/product/New/오크내츄럴.png" alt="오크내츄럴.png">
+    <img src="/static/img/product/New/오크어스그레이.png" alt="오크어스그레이.png">
+    <img src="/static/img/product/New/오크테라브라운.png" alt="오크테라브라운.png">
+    <img src="/static/img/product/New/월넛내츄럴.png" alt="월넛내츄럴.png">
+</div>
+<div>
+    <hr><hr>
+</div>
+
+
+<div id="catalog">
+<div >
+    <h2 style="color:blue; text-align:center">카탈로그</h2>
+  <div >
+  <table><tr>
+      <td>
+    <a href="/static/catalog/cat_concreate.pdf" target="_self" >Concreate</a>
+    <a href="/static/catalog/cat_delfone.pdf" target="_self" >Delfone</a>
+    <a href="/static/catalog/cat_nanoglass.pdf" target="_self" >Nanoglass</a>
+    <a href="/static/catalog/B&B_ITALIA.pdf" target="_self" >B&B Italia</a>
+      </td>
+      <td>
+    <a href="/static/catalog/LF.pdf" target="_self" >LF</a>
+    <a href="/static/catalog/FALPER_ListinoCucine_2022_1_1.pdf" target="_self" >Falper</a>
+    <a href="/static/catalog/Falper_Price List 2022-2023_1.1.pdf" target="_self" >Falper Price</a>
+    <a href="/static/catalog/카탈로그 atroguard 최종본.pdf" target="_self" >Atroguard</a>
+      </td>
+      <td>
+    <a href="/static/catalog/kingdom.pdf" target="_self" >Kingdom</a>
+    <a href="/static/catalog/WOODURA 카탈로그 샘플링 최종본.pdf" target="_self" >Woodura</a>
+      </td>
+  </tr></table>
+  </div>
+</div>
+</div>
+
+<a href="{% url 'contact' %}">Contact Us</a>
+{% endblock %}
