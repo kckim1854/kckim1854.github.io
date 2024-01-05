@@ -6,6 +6,50 @@
     {% endblock %}
 
     {% block head_add %}
+      <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <style>
+
+    /* ì¶”ê°€ì ì¸ ìŠ¤íƒ€ì¼ë§ì„ ìœ„í•œ CSS */
+    .swiper-container {
+      width: 100%;
+      height: 700px;
+
+    }
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: grey;
+
+      /* ê¸°íƒ€ ìŠ¬ë¼ì´ë“œ ìŠ¤íƒ€ì¼ë§ */
+    }
+    .swiper-slide img {
+      height: 700px;
+      width: auto;
+    }
+    .slide-text {
+      position: absolute;
+      top: 80%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 40px;
+      /* ê¸°íƒ€ í…ìŠ¤íŠ¸ ìŠ¤íƒ€ì¼ë§ */
+    }
+    .image-container {
+      display: flex;
+      justify-content: center; /* ìˆ˜í‰ ê°€ìš´ë° ì •ë ¬ */
+      align-items: center; /* ìˆ˜ì§ ê°€ìš´ë° ì •ë ¬ */
+      height: 100vh; /* í™”ë©´ ë†’ì´ì— ë§ê²Œ ì¡°ì • */
+    }
+
+    .image-container img {
+      max-width: 100%; /* ì´ë¯¸ì§€ í¬ê¸°ê°€ ë¶€ëª¨ ì»¨í…Œì´ë„ˆë¥¼ ë²—ì–´ë‚˜ì§€ ì•Šë„ë¡ ì„¤ì • */
+      max-height: 100%; /* ì´ë¯¸ì§€ í¬ê¸°ê°€ ë¶€ëª¨ ì»¨í…Œì´ë„ˆë¥¼ ë²—ì–´ë‚˜ì§€ ì•Šë„ë¡ ì„¤ì • */
+      height: auto;
+    }
+
+
+  </style>
     {% endblock %}
 
     <meta charset="utf-8" />
@@ -22,9 +66,9 @@
 <style>
 
     .smenu {
-        display: flex; /* Flexbox ·¹ÀÌ¾Æ¿ô »ç¿ë */
-        justify-content: space-between; /* ·Î°í¿Í ¸Ş´º¸¦ ¾ç ³¡À¸·Î Á¤·Ä */
-        align-items: center; /* ¼¼·Î Áß¾Ó Á¤·Ä */
+        display: flex; /* Flexbox ë ˆì´ì•„ì›ƒ ì‚¬ìš© */
+        justify-content: space-between; /* ë¡œê³ ì™€ ë©”ë‰´ë¥¼ ì–‘ ëìœ¼ë¡œ ì •ë ¬ */
+        align-items: center; /* ì„¸ë¡œ ì¤‘ì•™ ì •ë ¬ */
         background-color: powderblue;
         padding: 10px;
         margin: 0;
@@ -41,14 +85,14 @@
         border : 3px solid green;
         border-radius : 7px
 
-        /* margin-right: auto; ·Î°í¸¦ ¿ŞÂÊ ³¡¿¡ Á¤·Ä */
+        /* margin-right: auto; ë¡œê³ ë¥¼ ì™¼ìª½ ëì— ì •ë ¬ */
     }
 
     .menu ul {
         list-style-type: none;
         margin: 0;
         padding: 0;
-        display: flex; /* ¸Ş´º Ç×¸ñµéÀ» °¡·Î·Î ³ª¿­ÇÏ±â À§ÇØ Flexbox »ç¿ë */
+        display: flex; /* ë©”ë‰´ í•­ëª©ë“¤ì„ ê°€ë¡œë¡œ ë‚˜ì—´í•˜ê¸° ìœ„í•´ Flexbox ì‚¬ìš© */
         /* border: 1px solid black; */
     }
 
@@ -59,11 +103,11 @@
     }
 
     .menu ul li:last-child {
-        margin-right: 20px; /* ¸¶Áö¸· ¸Ş´º Ç×¸ñÀÇ ¿À¸¥ÂÊ ¸¶ÁøÀ» Á¦°ÅÇÏ¿© °£°İ Á¶Á¤ */
+        margin-right: 20px; /* ë§ˆì§€ë§‰ ë©”ë‰´ í•­ëª©ì˜ ì˜¤ë¥¸ìª½ ë§ˆì§„ì„ ì œê±°í•˜ì—¬ ê°„ê²© ì¡°ì • */
     }
 
     .menu ul li:hover ul.submenu {
-        display: block; /* ¸¶¿ì½º È£¹ö ½Ã ÇÏÀ§ ¸Ş´º Ç¥½Ã */
+        display: block; /* ë§ˆìš°ìŠ¤ í˜¸ë²„ ì‹œ í•˜ìœ„ ë©”ë‰´ í‘œì‹œ */
         background-color: #dddddd;
     }
 
@@ -71,25 +115,25 @@
         display: none;
         position: absolute;
         width: 80px;
-        top: 100%; /* »óÀ§ ¸Ş´º ¾Æ·¡¿¡ Ç¥½Ã */
+        top: 100%; /* ìƒìœ„ ë©”ë‰´ ì•„ë˜ì— í‘œì‹œ */
         left:0;
         background-color: #fff;
         padding: 0;
-        z-index: 999; /* ¼­ºê¸Ş´º°¡ Ç¥½ÃµÉ ¶§ ¾Æ·¡¿¡ ÀÖ´Â ¿ä¼Ò À§¿¡ ³ªÅ¸³ª°Ô ÇÔ */
+        z-index: 999; /* ì„œë¸Œë©”ë‰´ê°€ í‘œì‹œë  ë•Œ ì•„ë˜ì— ìˆëŠ” ìš”ì†Œ ìœ„ì— ë‚˜íƒ€ë‚˜ê²Œ í•¨ */
     }
 
     .has-submenu::after {
-        content: '\25B8'; /* ¿À¸¥ÂÊ ¹æÇâ È­»ìÇ¥ ¾ÆÀÌÄÜ */
+        content: '\25B8'; /* ì˜¤ë¥¸ìª½ ë°©í–¥ í™”ì‚´í‘œ ì•„ì´ì½˜ */
         display: inline-block;
-        margin-left: 5px; /* È­»ìÇ¥¿Í ÅØ½ºÆ® »çÀÌ ¿©¹é Á¶Á¤ */
-        transition: transform 0.3s; /* È­»ìÇ¥ È¸Àü È¿°ú¸¦ À§ÇÑ Æ®·£Áö¼Ç */
+        margin-left: 5px; /* í™”ì‚´í‘œì™€ í…ìŠ¤íŠ¸ ì‚¬ì´ ì—¬ë°± ì¡°ì • */
+        transition: transform 0.3s; /* í™”ì‚´í‘œ íšŒì „ íš¨ê³¼ë¥¼ ìœ„í•œ íŠ¸ëœì§€ì…˜ */
     }
 
-    /* ¼­ºê¸Ş´º°¡ ¿­·ÈÀ» ¶§ È­»ìÇ¥ È¸Àü */
+    /* ì„œë¸Œë©”ë‰´ê°€ ì—´ë ¸ì„ ë•Œ í™”ì‚´í‘œ íšŒì „ */
     .has-submenu.active::after {
-        transform: rotate(90deg); /* È­»ìÇ¥ È¸Àü */
+        transform: rotate(90deg); /* í™”ì‚´í‘œ íšŒì „ */
     }
-    /* ¼­ºê¸Ş´º ½ºÅ¸ÀÏ */
+    /* ì„œë¸Œë©”ë‰´ ìŠ¤íƒ€ì¼ */
     .submenu {
         display: none;
         list-style: none;
@@ -102,40 +146,40 @@
 
     .audio-player {
         position: fixed;
-        bottom: 20px; /* ÇÏ´Ü ¿©¹é Á¶Á¤ */
-        right: 20px; /* ¿À¸¥ÂÊ ¿©¹é Á¶Á¤ */
+        bottom: 20px; /* í•˜ë‹¨ ì—¬ë°± ì¡°ì • */
+        right: 20px; /* ì˜¤ë¥¸ìª½ ì—¬ë°± ì¡°ì • */
 /*        background-color: #f0f0f0; */
-/*        background-color: rgba(240, 240, 240, 0.5); *//* ¹İÅõ¸íÇÑ ¹è°æ»öÀ» ÁöÁ¤ÇÕ´Ï´Ù (RGBA »ö»ó°ª »ç¿ë) */
+/*        background-color: rgba(240, 240, 240, 0.5); *//* ë°˜íˆ¬ëª…í•œ ë°°ê²½ìƒ‰ì„ ì§€ì •í•©ë‹ˆë‹¤ (RGBA ìƒ‰ìƒê°’ ì‚¬ìš©) */
         padding: 0;
         border-radius: 0;
-/*        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); *//* ±×¸²ÀÚ È¿°ú Ãß°¡ */
+/*        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); *//* ê·¸ë¦¼ì íš¨ê³¼ ì¶”ê°€ */
     }
 
-    /* .audio-player ³»ºÎÀÇ ³»¿ë¿¡ ´ëÇÑ ½ºÅ¸ÀÏ */
+    /* .audio-player ë‚´ë¶€ì˜ ë‚´ìš©ì— ëŒ€í•œ ìŠ¤íƒ€ì¼ */
     .audio-player * {
-        opacity: 0.3; /* ³»¿ë¹°ÀÇ Åõ¸íµµ ¼³Á¤ */
+        opacity: 0.3; /* ë‚´ìš©ë¬¼ì˜ íˆ¬ëª…ë„ ì„¤ì • */
     }
 
     <style>
-/* CSS ½ºÅ¸ÀÏ ½ÃÆ® */
+/* CSS ìŠ¤íƒ€ì¼ ì‹œíŠ¸ */
 .image-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px; /* ÀÌ¹ÌÁö »çÀÌÀÇ °£°İ Á¶Á¤ */
+  gap: 10px; /* ì´ë¯¸ì§€ ì‚¬ì´ì˜ ê°„ê²© ì¡°ì • */
 }
 
 .image-container img {
-  max-width: calc(33.33% - 20px); /* °¢ ÀÌ¹ÌÁöÀÇ ÃÖ´ë ³Êºñ ÁöÁ¤ */
+  max-width: calc(33.33% - 20px); /* ê° ì´ë¯¸ì§€ì˜ ìµœëŒ€ ë„ˆë¹„ ì§€ì • */
   height: auto;
-  margin: 5px; /* ÀÌ¹ÌÁö ÁÖÀ§ÀÇ ¿©¹é Á¶Á¤ */
+  margin: 5px; /* ì´ë¯¸ì§€ ì£¼ìœ„ì˜ ì—¬ë°± ì¡°ì • */
 }
 
 .image-container .text-overlay {
       position: absolute;
-      top: 50%; /* ÀÌ¹ÌÁö Áß¾Ó¿¡ ¹èÄ¡ÇÏ·Á¸é ¼öÁ÷ À§Ä¡ Á¶Á¤ */
-      left: 50%; /* ÀÌ¹ÌÁö Áß¾Ó¿¡ ¹èÄ¡ÇÏ·Á¸é ¼öÆò À§Ä¡ Á¶Á¤ */
+      top: 50%; /* ì´ë¯¸ì§€ ì¤‘ì•™ì— ë°°ì¹˜í•˜ë ¤ë©´ ìˆ˜ì§ ìœ„ì¹˜ ì¡°ì • */
+      left: 50%; /* ì´ë¯¸ì§€ ì¤‘ì•™ì— ë°°ì¹˜í•˜ë ¤ë©´ ìˆ˜í‰ ìœ„ì¹˜ ì¡°ì • */
       transform: translate(-50%, -50%);
-      background: rgba(255, 255, 255, 0.7); /* ÅØ½ºÆ® ¹è°æ»ö°ú Åõ¸íµµ ¼³Á¤ */
+      background: rgba(255, 255, 255, 0.7); /* í…ìŠ¤íŠ¸ ë°°ê²½ìƒ‰ê³¼ íˆ¬ëª…ë„ ì„¤ì • */
       padding: 10px;
     }
 
@@ -157,22 +201,22 @@
         <div><a class="logo" href="{% url 'index' %}"><b><i>The ScHAFFEN</i></b></a></div>
         <nav class="menu" style="background-color:powderblue;">
             <ul>
-                <li><a class="nav-link" href="{% url 'index' %}">»şÆæ È¨</a></li>
-                <li><a class="nav-link" href="{% url 'intro' %}#about">»şÆæ ¼Ò°³</a></li>
-                <li class="has-submenu"><a class="nav-link" href="{% url 'product' %}#services">»şÆæ Á¦Ç°</a>
+                <li><a class="nav-link" href="{% url 'index' %}">ìƒ¤íœ í™ˆ</a></li>
+                <li><a class="nav-link" href="{% url 'intro' %}#about">ìƒ¤íœ ì†Œê°œ</a></li>
+                <li class="has-submenu"><a class="nav-link" href="{% url 'product' %}#services">ìƒ¤íœ ì œí’ˆ</a>
                     <ul class="submenu">
-                        <li><a href="{% url 'floor' %}">¹Ù´ÚÀç</a></li>
-                        <li><a href="{% url 'wall' %}">º®Àç</a></li>
-                        <li><a href="{% url 'tile' %}">Å¸ÀÏ</a></li>
-                        <li><a href="{% url 'stone' %}">¼®Àç</a></li>
-                        <li><a href="{% url 'bath' %}">¹Ù½º</a></li>
-                        <li><a href="{% url 'furniture' %}">°¡±¸</a></li>
+                        <li><a href="{% url 'floor' %}">ë°”ë‹¥ì¬</a></li>
+                        <li><a href="{% url 'wall' %}">ë²½ì¬</a></li>
+                        <li><a href="{% url 'tile' %}">íƒ€ì¼</a></li>
+                        <li><a href="{% url 'stone' %}">ì„ì¬</a></li>
+                        <li><a href="{% url 'bath' %}">ë°”ìŠ¤</a></li>
+                        <li><a href="{% url 'furniture' %}">ê°€êµ¬</a></li>
                     </ul>
                 </li>
-                <li class="has-submenu"><a class="nav-link" href="{% url 'project' %}#project">ÇÁ·ÎÁ§Æ®</a>
+                <li class="has-submenu"><a class="nav-link" href="{% url 'project' %}#project">í”„ë¡œì íŠ¸</a>
                     <ul class="submenu">
-                        <li><a href="https://www.instagram.com/safn_official">ÀÎ½ºÅ¸±×·¥</a></li>
-                        <li><a href="https://blog.naver.com/safn_official">ºí·Î±×</a></li>
+                        <li><a href="https://www.instagram.com/safn_official">ì¸ìŠ¤íƒ€ê·¸ë¨</a></li>
+                        <li><a href="https://blog.naver.com/safn_official">ë¸”ë¡œê·¸</a></li>
                     </ul>
                 </li>
                 <li><a class="nav-link" href="{% url 'faq' %}#faq">FAQ</a></li>
@@ -184,147 +228,40 @@
     <div class="main">
         <br>
             {% block content %}
-            {% endblock %}
-    </div>
-<!-- Audio -->
-<div class="audio-player">
-  <audio controls autoplay loop>
-    <source src="/static/audio/Alhambra.mp3" type="audio/mpeg ">
-    Your browser does not support the audio tag.
-  </audio>
-</div>
 
-<script>
-  window.onload = function() {
-    const audioState = localStorage.getItem('audioState');
-    const audioPlayer = document.querySelector('.audio-player audio');
-    if (audioPlayer && audioState) {
-      const parsedState = JSON.parse(audioState);
-      audioPlayer.currentTime = parsedState.currentTime;
-      // ÇÊ¿äÇÑ ´Ù¸¥ »óÅÂ Á¤º¸¸¦ º¹¿ø
-      audioPlayer.volume = parsedState.volume;
-      if (parsedState.isPlaying) {
-        audioPlayer.play();
-      } else {
-        audioPlayer.pause();
-      }
-    }
-  };
-
-  window.onunload = function() {
-    const audioPlayer = document.querySelector('.audio-player audio');
-    if (audioPlayer) {
-      const audioState = {
-        currentTime: audioPlayer.currentTime,
-        // ÇÊ¿äÇÑ ´Ù¸¥ »óÅÂ Á¤º¸ ÀúÀå
-        volume: audioPlayer.volume,
-        isPlaying: !audioPlayer.paused
-      };
-      localStorage.setItem('audioState', JSON.stringify(audioState));
-    }
-  };
-</script>
-
-    <footer>
-        <div style="text-align:center; color:green; background-color:powderblue; ">
-            <br>
-            <H5>SHOWROOM</H5>
-            <h6>¼­¿ïÆ¯º°½Ã °­³²±¸ ³íÇö·Î 136±æ 5-7, B1~3F »şÆæ(06531)</h6>
-            <h6>5-7 Nonhyun-Ro 136-Gil, B1~3F, GangNam-Gu, Seoul, Republic of Korea (06531)</h6>
-            <h6>e-mail : safn00114@gmail.com</h6>
-            <br>
-        </div>
-    </footer>
-
-</body>
-</html>
-
-
-{% extends "base.html" %}
-{% block head_add %}
-  <!-- Swiper CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-  <style>
-
-    /* Ãß°¡ÀûÀÎ ½ºÅ¸ÀÏ¸µÀ» À§ÇÑ CSS */
-    .swiper-container {
-      width: 100%;
-      height: 700px;
-
-    }
-    .swiper-slide {
-      text-align: center;
-      font-size: 18px;
-      background: grey;
-
-      /* ±âÅ¸ ½½¶óÀÌµå ½ºÅ¸ÀÏ¸µ */
-    }
-    .swiper-slide img {
-      height: 700px;
-      width: auto;
-    }
-    .slide-text {
-      position: absolute;
-      top: 80%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: white;
-      font-size: 40px;
-      /* ±âÅ¸ ÅØ½ºÆ® ½ºÅ¸ÀÏ¸µ */
-    }
-    .image-container {
-      display: flex;
-      justify-content: center; /* ¼öÆò °¡¿îµ¥ Á¤·Ä */
-      align-items: center; /* ¼öÁ÷ °¡¿îµ¥ Á¤·Ä */
-      height: 100vh; /* È­¸é ³ôÀÌ¿¡ ¸Â°Ô Á¶Á¤ */
-    }
-
-    .image-container img {
-      max-width: 100%; /* ÀÌ¹ÌÁö Å©±â°¡ ºÎ¸ğ ÄÁÅ×ÀÌ³Ê¸¦ ¹ş¾î³ªÁö ¾Êµµ·Ï ¼³Á¤ */
-      max-height: 100%; /* ÀÌ¹ÌÁö Å©±â°¡ ºÎ¸ğ ÄÁÅ×ÀÌ³Ê¸¦ ¹ş¾î³ªÁö ¾Êµµ·Ï ¼³Á¤ */
-      height: auto;
-    }
-
-
-  </style>
-{% endblock %}
-
-
-
-{% block content %}
-  <!-- Swiper -->
+          <!-- Swiper -->
   <div class="filler" style="height:20px; background: grey"></div>
 
   <div class="swiper-container">
     <div class="swiper-wrapper">
-      <!-- ½½¶óÀÌµå¸¦ À§ÇÑ ÀÌ¹ÌÁöµé -->
+      <!-- ìŠ¬ë¼ì´ë“œë¥¼ ìœ„í•œ ì´ë¯¸ì§€ë“¤ -->
       <div class="swiper-slide"><img src="static/img/home/home1.png" alt="home 1">
-      <div class="slide-text">»şÆæ°ú ÇÔ²² ÇÏ´Â</div></div>
+      <div class="slide-text">ìƒ¤íœê³¼ í•¨ê»˜ í•˜ëŠ”</div></div>
 
       <div class="swiper-slide"><img src="static/img/home/home2.png" alt="home 2">
-      <div class="slide-text">ÀÎÅ×¸®¾îÀÇ ½Å¼¼°è !!</div></div>
+      <div class="slide-text">ì¸í…Œë¦¬ì–´ì˜ ì‹ ì„¸ê³„ !!</div></div>
 
       <div class="swiper-slide"><img src="static/img/home/home3.png" alt="home 3">
-      <div class="slide-text">ÃÖ°í±Ş µğÀÚÀÎ º®Àç</div></div>
+      <div class="slide-text">ìµœê³ ê¸‰ ë””ìì¸ ë²½ì¬</div></div>
 
       <div class="swiper-slide"><img src="static/img/home/home4.png" alt="home 4">
-      <div class="slide-text">°¡¼ººñ ÃÖ°­ÀÇ ¹Ù´ÚÀç</div></div>
+      <div class="slide-text">ê°€ì„±ë¹„ ìµœê°•ì˜ ë°”ë‹¥ì¬</div></div>
 
       <div class="swiper-slide"><img src="static/img/home/home5.png" alt="home 5">
-      <div class="slide-text">È£È­½º·¯¿î Å¸ÀÏ</div></div>
+      <div class="slide-text">í˜¸í™”ìŠ¤ëŸ¬ìš´ íƒ€ì¼</div></div>
 
       <div class="swiper-slide"><img src="static/img/home/home6.png" alt="home 6">
-      <div class="slide-text">ÃÖ°í Ç°ÁúÀÇ ´Ù¾çÇÑ ÀÚÀç¸¦</div></div>
+      <div class="slide-text">ìµœê³  í’ˆì§ˆì˜ ë‹¤ì–‘í•œ ìì¬ë¥¼</div></div>
 
       <div class="swiper-slide"><img src="static/img/home/home7.png" alt="home 7">
-      <div class="slide-text">ÁÁÀº °¡°İÀ¸·Î Á¦°øÇÏ°í ÀÖ½À´Ï´Ù</div></div>
+      <div class="slide-text">ì¢‹ì€ ê°€ê²©ìœ¼ë¡œ ì œê³µí•˜ê³  ìˆìŠµë‹ˆë‹¤</div></div>
 
       <div class="swiper-slide"><img src="static/img/home/home8.png" alt="home 8">
-      <div class="slide-text">»şÆæ Àü½ÃÀåÀ» ¹æ¹®ÇÏ½Ã¾î</div></div>
+      <div class="slide-text">ìƒ¤íœ ì „ì‹œì¥ì„ ë°©ë¬¸í•˜ì‹œì–´</div></div>
 
       <div class="swiper-slide"><img src="static/img/home/home9.png" alt="home 9">
-      <div class="slide-text">ÃÖ°íÀÇ Ç°Áú°ú ±â¼ú·ÂÀ» ¸Àº¸¼¼¿ä</div></div>
-      <!-- Ãß°¡ÀûÀÎ ÀÌ¹ÌÁöµéÀ» À§ÇÑ ½½¶óÀÌµå -->
+      <div class="slide-text">ìµœê³ ì˜ í’ˆì§ˆê³¼ ê¸°ìˆ ë ¥ì„ ë§›ë³´ì„¸ìš”</div></div>
+      <!-- ì¶”ê°€ì ì¸ ì´ë¯¸ì§€ë“¤ì„ ìœ„í•œ ìŠ¬ë¼ì´ë“œ -->
     </div>
     <!-- Add Pagination -->
 
@@ -342,14 +279,14 @@
   <!-- Initialize Swiper -->
   <script>
     var swiper = new Swiper('.swiper-container', {
-      // ½½¶óÀÌµå ¹æÇâ ¼³Á¤ (¼öÆòÀ¸·Î ½½¶óÀÌµå)
+      // ìŠ¬ë¼ì´ë“œ ë°©í–¥ ì„¤ì • (ìˆ˜í‰ìœ¼ë¡œ ìŠ¬ë¼ì´ë“œ)
       direction: 'horizontal',
-      // ÀÚµ¿ ½½¶óÀÌµå ¼³Á¤ (3ÃÊ¸¶´Ù)
+      // ìë™ ìŠ¬ë¼ì´ë“œ ì„¤ì • (3ì´ˆë§ˆë‹¤)
       autoplay: {
         delay: 3000,
       },
-      // Ãß°¡ÀûÀÎ ¿É¼Çµé ¼³Á¤ °¡´É
-      // pagination, navigation µî
+      // ì¶”ê°€ì ì¸ ì˜µì…˜ë“¤ ì„¤ì • ê°€ëŠ¥
+      // pagination, navigation ë“±
         progressbar:{
           el: '.swiper-progressbar',
           hide: true,
@@ -359,6 +296,71 @@
 
     });
   </script>
+
+            {% endblock %}
+    </div>
+<!-- Audio -->
+<div class="audio-player">
+  <audio controls autoplay loop>
+    <source src="/static/audio/Alhambra.mp3" type="audio/mpeg ">
+    Your browser does not support the audio tag.
+  </audio>
+</div>
+
+<script>
+  window.onload = function() {
+    const audioState = localStorage.getItem('audioState');
+    const audioPlayer = document.querySelector('.audio-player audio');
+    if (audioPlayer && audioState) {
+      const parsedState = JSON.parse(audioState);
+      audioPlayer.currentTime = parsedState.currentTime;
+      // í•„ìš”í•œ ë‹¤ë¥¸ ìƒíƒœ ì •ë³´ë¥¼ ë³µì›
+      audioPlayer.volume = parsedState.volume;
+      if (parsedState.isPlaying) {
+        audioPlayer.play();
+      } else {
+        audioPlayer.pause();
+      }
+    }
+  };
+
+  window.onunload = function() {
+    const audioPlayer = document.querySelector('.audio-player audio');
+    if (audioPlayer) {
+      const audioState = {
+        currentTime: audioPlayer.currentTime,
+        // í•„ìš”í•œ ë‹¤ë¥¸ ìƒíƒœ ì •ë³´ ì €ì¥
+        volume: audioPlayer.volume,
+        isPlaying: !audioPlayer.paused
+      };
+      localStorage.setItem('audioState', JSON.stringify(audioState));
+    }
+  };
+</script>
+
+    <footer>
+        <div style="text-align:center; color:green; background-color:powderblue; ">
+            <br>
+            <H5>SHOWROOM</H5>
+            <h6>ì„œìš¸íŠ¹ë³„ì‹œ ê°•ë‚¨êµ¬ ë…¼í˜„ë¡œ 136ê¸¸ 5-7, B1~3F ìƒ¤íœ(06531)</h6>
+            <h6>5-7 Nonhyun-Ro 136-Gil, B1~3F, GangNam-Gu, Seoul, Republic of Korea (06531)</h6>
+            <h6>e-mail : safn00114@gmail.com</h6>
+            <br>
+        </div>
+    </footer>
+
+</body>
+</html>
+
+
+{% extends "base.html" %}
+{% block head_add %}
+
+{% endblock %}
+
+
+
+{% block content %}
 
 
 {% endblock %}
