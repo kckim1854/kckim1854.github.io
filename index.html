@@ -1,1 +1,124 @@
-"Hello World by Kyuchull Kim"
+
+{% extends "base.html" %}
+{% block head_add %}
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <style>
+
+    /* 추가적인 스타일링을 위한 CSS */
+    .swiper-container {
+      width: 100%;
+      height: 700px;
+
+    }
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: grey;
+
+      /* 기타 슬라이드 스타일링 */
+    }
+    .swiper-slide img {
+      height: 700px;
+      width: auto;
+    }
+    .slide-text {
+      position: absolute;
+      top: 80%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 40px;
+      /* 기타 텍스트 스타일링 */
+    }
+    .image-container {
+      display: flex;
+      justify-content: center; /* 수평 가운데 정렬 */
+      align-items: center; /* 수직 가운데 정렬 */
+      height: 100vh; /* 화면 높이에 맞게 조정 */
+    }
+
+    .image-container img {
+      max-width: 100%; /* 이미지 크기가 부모 컨테이너를 벗어나지 않도록 설정 */
+      max-height: 100%; /* 이미지 크기가 부모 컨테이너를 벗어나지 않도록 설정 */
+      height: auto;
+    }
+
+
+  </style>
+{% endblock %}
+
+
+
+{% block content %}
+  <!-- Swiper -->
+  <div class="filler" style="height:20px; background: grey"></div>
+
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <!-- 슬라이드를 위한 이미지들 -->
+      <div class="swiper-slide"><img src="static/img/home/home1.png" alt="home 1">
+      <div class="slide-text">샤펜과 함께 하는</div></div>
+
+      <div class="swiper-slide"><img src="static/img/home/home2.png" alt="home 2">
+      <div class="slide-text">인테리어의 신세계 !!</div></div>
+
+      <div class="swiper-slide"><img src="static/img/home/home3.png" alt="home 3">
+      <div class="slide-text">최고급 디자인 벽재</div></div>
+
+      <div class="swiper-slide"><img src="static/img/home/home4.png" alt="home 4">
+      <div class="slide-text">가성비 최강의 바닥재</div></div>
+
+      <div class="swiper-slide"><img src="static/img/home/home5.png" alt="home 5">
+      <div class="slide-text">호화스러운 타일</div></div>
+
+      <div class="swiper-slide"><img src="static/img/home/home6.png" alt="home 6">
+      <div class="slide-text">최고 품질의 다양한 자재를</div></div>
+
+      <div class="swiper-slide"><img src="static/img/home/home7.png" alt="home 7">
+      <div class="slide-text">좋은 가격으로 제공하고 있습니다</div></div>
+
+      <div class="swiper-slide"><img src="static/img/home/home8.png" alt="home 8">
+      <div class="slide-text">샤펜 전시장을 방문하시어</div></div>
+
+      <div class="swiper-slide"><img src="static/img/home/home9.png" alt="home 9">
+      <div class="slide-text">최고의 품질과 기술력을 맛보세요</div></div>
+      <!-- 추가적인 이미지들을 위한 슬라이드 -->
+    </div>
+    <!-- Add Pagination -->
+
+
+    <div class="swiper-pagination"></div>
+  </div>
+  <div class="filler" style="height:20px; background: grey"></div>
+
+
+
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      // 슬라이드 방향 설정 (수평으로 슬라이드)
+      direction: 'horizontal',
+      // 자동 슬라이드 설정 (3초마다)
+      autoplay: {
+        delay: 3000,
+      },
+      // 추가적인 옵션들 설정 가능
+      // pagination, navigation 등
+        progressbar:{
+          el: '.swiper-progressbar',
+          hide: true,
+        },
+
+
+
+    });
+  </script>
+
+
+{% endblock %}
+
