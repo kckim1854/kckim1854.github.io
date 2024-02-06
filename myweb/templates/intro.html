@@ -11,13 +11,13 @@
 
 /* 3/4 영역 스타일 */
 .three-fourths {
-  flex: 0 0 60%; /* 3/4 크기 */
+  flex: 0 0 30%; /* 3/4 크기 */
   padding: 0 16px; /* 패딩 추가 */
 }
 
 /* 1/4 영역 스타일 */
 .one-fourth {
-  flex: 0 0 40%; /* 1/4 크기 */
+  flex: 0 0 70%; /* 1/4 크기 */
   padding: 0 16px; /* 패딩 추가 */
 }
 </style>
@@ -33,23 +33,21 @@
   max-width: calc(20% - 20px); /* 각 이미지의 최대 너비 지정 */
   height: auto;
   margin: 5px; /* 이미지 주위의 여백 조정 */
+  border-radius: 50%;
 }
 </style>
 {% endblock %}
 
 {% block content %}
 <div class="w3-row-padding" style="display: flex; justify-content: center; align-items: center;">
-  <div class="three-fourths" style="max-width: 75%;">
-    <img src="/static/img/intro/marble.png" alt="marble.jpg" style="width: 100%; height: auto;">
-  </div>
   <div  class="one-fourth">
-    <h1 style="color:green; text-align:center"><b>샤펜</b></h1>
+    <h1 style="color:green; text-align:center"><b>더샤펜</b></h1>
     <br>
-    <h4 style="color:blue">마감재의 새로운 길, 샤펜이 만듭니다.</h4>
-    <p>샤펜은 1981년 창사 이래 지난 40여년간 우리 사회의 내외장 건축 마감재 품질과 디자인 업그레이드를 위해 노력해왔습니다.</p>
+    <h4 style="color:blue">마감재의 새로운 길, 더샤펜이 만듭니다.</h4>
+    <p>더샤펜은 1981년 창사 이래 지난 40여년간 우리 사회의 내외장 건축 마감재 품질과 디자인 업그레이드를 위해 노력해왔습니다.</p>
     <h4 style="color:blue">ALL IN ONE PLACE</h4>
     <p>모든 자재를 한 곳에서 만나보세요.
-샤펜은 세계 각국의 건축자재 업체들과 쌓아온
+더샤펜은 세계 각국의 건축자재 업체들과 쌓아온
 탄탄한 네트워킹 인프라를 바탕으로
 고객이 보다 효율적으로, 만족스러운 공간을 연출할 수 있도록
 벽재, 바닥재, 스톤/타일 등 토탈 디자인 서비스를 제공합니다.</p>
@@ -59,11 +57,11 @@
 그리고 개성을 표현할 수 있는 독창적이고
 아름다운 디자인의 자재까지
 
-샤펜은 높은 퀄리티의 다양한 자재를
+더샤펜은 높은 퀄리티의 다양한 자재를
 가장 합리적인 가격으로 유통하고자 노력하고 있습니다.
 
-샤펜이 만드는 길은 여러분에 의해 완성됩니다.
-샤펜의 쇼룸을 방문하여 경험하세요.
+더샤펜이 만드는 길은 여러분에 의해 완성됩니다.
+더샤펜의 쇼룸을 방문하여 경험하세요.
 </p>
     <br>
 <h5 style="text-align: center;"><b> <i style="color:red; ">COME AND GET INSPIRED!</i></b></h5>
@@ -75,8 +73,8 @@
 <div>
   <div style="background:lightblue;">
     <br>
-    <h2 style="color:green; text-align:center;">샤펜의 해외 협력사</h2>
-    <div class="image-container">
+    <h2 style="color:green; text-align:center;">더샤펜의 해외 브랜드</h2>
+    <div class="image-container" >
         <img src="/static/img/intro/logo_partners/ATROGUARD.png" alt="ATROGUARD image">
         <img src="/static/img/intro/logo_partners/CFL.jpg" alt="CFL image">
         <img src="/static/img/intro/logo_partners/CONCREATE.png" alt="CONCREATE image">
@@ -91,39 +89,6 @@
         <img src="/static/img/intro/logo_partners/topfloor.jpg" alt="VALINGE image">
     </div>
    </div>
-</div>
-
-<div class="w3-row-padding" >
-
-<div class="w3-half">
-    <br>
-  <div style="padding: 2%; text-align:center">
-      <h4><b>오시는 길</b></h4>
-    <iframe allowfullscreen=""
-        height="auto" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.641642056629!2d127.02751607658449!3d37.51636937205164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca3f212b5438f%3A0xcef85fdbf73e4aa9!2z7ISc7Jq47Yq567OE7IucIOqwleuCqOq1rCDrhbztmITroZwxMzbquLggNS03!5e0!3m2!1sko!2skr!4v1701925619870!5m2!1sko!2skr"
-        style="border:1px solid grey; alignment:center"
-        width="100%"></iframe>
-  </div>
-    <div style="padding:15px">
-        <p>학동역에서 논현로를 따라 북쪽 방향으로 150m 정도 오시다가 논현로 136길(담미온 식당)로 우회전 하신 다음 왼쪽 첫번째 골목으로 좌회전 하시어 조금 걸어 오시면 왼편에 샤펜 건물이 있습니다.</p>
-    </div>
-</div>
-
-<div class="w3-half" >
-    <br>
-    <h4 style="text-align: center;"><b>연 락 처</b></h4>
-    <div style="border: 1px solid grey; background-color: white; text-align:center">
-
-        <h4><u>Contact Us</u></h4>
-        <br>
-        <p>phone: (02) 542 - 0111</p>
-        <p>email: safn00114@gmail.com</p>
-        <p>instagram: @safn_official</p>
-        <p>blog: https://blog.naver.com/safn_official</p>
-    </div>
-</div>
-
 </div>
 
 {% endblock %}
