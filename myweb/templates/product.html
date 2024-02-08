@@ -6,10 +6,12 @@ table {
     width: 80%;
     margin: 10%;
     text-align : center;
+    background-image: url(/static/img/product/floor/tenacity/marble.png);
 }
 
 table th {
     width: 16%;
+    color: green;
 }
 
 table th, table tr td {
@@ -67,12 +69,27 @@ td ul {
       display: block;
     }
   </style>
+  <style>
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* 이미지 사이의 간격 조정 */
+}
+      .image-container img {
+        max-width: calc(20% - 20px); /* 각 이미지의 최대 너비 지정 */
+        height: auto;
+        margin: 5px; /* 이미지 주위의 여백 조정 */
+        border-radius: 50%;
+      }
+
+
+  </style>
 
 {% endblock %}
 
 {% block content %}
-<div>
-    <h1 style="color:green; text-align:center">인테리어 자재</h1>
+<div >
+    <h1 style="color:green; text-align:center;">인테리어 자재</h1>
 </div>
 <table>
   <tr>
@@ -82,8 +99,6 @@ td ul {
     <th><a href="{% url 'stone' %}">석재</a></th>
     <th><a href="{% url 'bath' %}">키친/바스</a></th>
     <th><a href="{% url 'furniture' %}">가구</a></th>
-
-
   </tr>
   <tr>
     <td>
@@ -145,19 +160,20 @@ td ul {
     <hr><hr>
 </div>
 
+
 <div>
-    <h1 style="color:blue; text-align:center">인기상품/신상품/카탈로그</h1>
+    <h1 style="color:green; text-align:center">인기상품/신상품/카탈로그</h1>
 </div>
 
 <table>
   <tr>
-    <th style="padding:15px; color:blue; "><a href="#best">인기상품</a></th>
-    <th style="padding:15px; color:blue; "><a href="#new">신상품</a></th>
-    <th style="padding:15px; color:blue; "><a href="#catalog">카탈로그</a></th>
+    <th style="padding:15px; color:green; "><a href="#best">인기상품</a></th>
+    <th style="padding:15px; color:green; "><a href="#new">신상품</a></th>
+    <th style="padding:15px; color:green; "><a href="#catalog">카탈로그</a></th>
 </table>
 
 <div id="best">
-    <h2 style="color:blue; text-align:center">인기 상품 (Best Selling Products)</h2>
+    <h2 style="color:green; text-align:center">인기 상품 (Best Selling Products)</h2>
     <img src="/static/img/product/Best/FMC Stone.png" alt="FMC Stone.png">
     <img src="/static/img/product/Best/LM1.png" alt="LM1.png">
     <img src="/static/img/product/Best/LM2.png" alt="LM2.png">
@@ -168,7 +184,7 @@ td ul {
 
 
 <div id="new">
-    <h2 style="color:blue; text-align:center">신 상품 (New Arrivals)</h2>
+    <h2 style="color:green; text-align:center">신 상품 (New Arrivals)</h2>
     <img src="/static/img/product/New/애쉬파우더화이트.png" alt="애쉬파우더화이트.png">
     <img src="/static/img/product/New/오크내츄럴.png" alt="오크내츄럴.png">
     <img src="/static/img/product/New/오크어스그레이.png" alt="오크어스그레이.png">
@@ -182,8 +198,8 @@ td ul {
 
 <div id="catalog">
 <div >
-    <h2 style="color:blue; text-align:center">카탈로그</h2>
-  <div >
+    <h2 style="color:green; text-align:center">카탈로그</h2>
+  <div style="color:green;">
   <table><tr>
       <td>
     <a href="/static/catalog/cat_concreate.pdf" target="_self" >Concreate</a>
